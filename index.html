@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>小票算账系统</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>订单录入</h2>
+        <div>
+            <select id="productSelect">
+                <option value="">选择商品</option>
+                <!-- 动态加载商品列表 -->
+            </select>
+            <input type="number" id="quantity" value="1" min="1">
+            <button onclick="addItem()">添加商品</button>
+        </div>
+        <table id="orderTable">
+            <tr><th>商品</th><th>单价</th><th>数量</th><th>小计</th></tr>
+        </table>
+        <p>总金额：<span id="total">0</span></p>
+        <button onclick="submitOrder()">提交订单</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
